@@ -11,7 +11,14 @@ from ..helpers.utils import reply_id
 
 plugin_category = "extra"
 
-@borg.on(admin_cmd(pattern=r"cd (.*)", outgoing=True))
+@catub.cat_cmd(
+    pattern="cd ?(.*)",
+    command=("cd", plugin_category),
+    info={
+        "header": "Countdown time in seconds",
+        "usage": "{tr}cd <number>",
+    },
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -30,8 +37,14 @@ async def _(event):
     await event.reply(f"Countdown for {total} seconds completed")
 
 
-
-@bot.on(admin_cmd(pattern=r"cid(?: |$)(.*)", outgoing=True))
+@catub.cat_cmd(
+    pattern="tr ?(.*)",
+    command=("tr", plugin_category),
+    info={
+        "header": "checks number in truecaller database",
+        "usage": "{tr}tr <number>",
+    },
+)
 async def _(event):
     if event.fwd_from:
         return
