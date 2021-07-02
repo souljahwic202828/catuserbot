@@ -38,11 +38,11 @@ async def _(event):
 
 
 @catub.cat_cmd(
-    pattern="tr ?(.*)",
-    command=("tr", plugin_category),
+    pattern="tc ?(.*)",
+    command=("tc", plugin_category),
     info={
         "header": "checks number in truecaller database",
-        "usage": "{tr}tr <number>",
+        "usage": "{tr}tc <number>",
     },
 )
 async def _(event):
