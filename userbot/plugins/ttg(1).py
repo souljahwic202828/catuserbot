@@ -9,12 +9,12 @@ from ..core.managers import edit_or_reply
 plugin_category = "fun"
 
 @catub.cat_cmd(
-    pattern="t2g ?(.*)",
-    command=("t2g", plugin_category),
+    pattern="ttg ?(.*)",
+    command=("ttg", plugin_category),
     info={
         "header": "create a gif with text, using @text2gifBot",
         "usage": [
-            "{tr}t2g <text> ; (1-28)",
+            "{tr}ttg <text> ; (1-28)",
         ],
     },
 )
