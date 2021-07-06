@@ -5,8 +5,8 @@ from . import reply_id
 
 
 @catub.cat_cmd(
-	pattern="uta ?(.*)",
-	command=("uta", "fun"),
+	pattern="sng ?(.*)",
+	command=("sng", "misc"),
 	info={
 		"header": "Get Songs from @LyBot quickly",
 		"usage": [
