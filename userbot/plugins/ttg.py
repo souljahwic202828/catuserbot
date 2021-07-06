@@ -31,7 +31,7 @@ async def ttg(e):
     	fx = args.split(";")
     	args = fx[0].strip()
     	c = int(fx[1].strip()) - 1
-    r3d = await edit_or_reply(e, "`...`")
+    r3d = await edit_or_reply(e, "`Making gif with your text...`")
     try:
         results = await e.client.inline_query(
             bot, args,
