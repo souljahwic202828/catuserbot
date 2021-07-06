@@ -10,10 +10,10 @@ from . import reply_id
 	info={
 		"header": "Get Songs from @LyBot quickly",
 		"usage": [
-			"{tr}uta <song_name>",
-			"{tr}uta <reply to a song name>",
+			"{tr}sng <song_name>",
+			"{tr}sng <reply to a song name>",
 		],
-		"examples": ["{tr}uta Dancin krono"],
+		"examples": ["{tr}sng lilpeep Beamerboy"],
 	}
 )
 async def lybot(e):
