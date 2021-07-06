@@ -29,7 +29,7 @@ async def lybot(e):
 		else:
 			await edit_delete(e, "`No input found`")
 
-	eris = await edit_or_reply(e, "`....`")
+	eris = await edit_or_reply(e, "`Searching for your song 🎵`")
 	res = await e.client.inline_query(
 		"lybot", args,
 	)
