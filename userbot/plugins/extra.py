@@ -74,3 +74,42 @@ async def _(event):
         await event.client.send_message(event.chat_id, details, reply_to=reply_id_,)
     await event.client.delete_messages(conv.chat_id, [start_msg.id, check.id])
 
+@catub.cat_cmd(
+ pattern="bc ?(.*)",
+ command=("bc", plugin_category),
+ info={
+  "header": "Text to binary",
+  "usage": [
+   "{tr}bc <Text>",
+   "{tr}bc <reply to a text>",
+  ],
+  "examples": ["{tr}bc Hello world"],
+ }
+)
+async def textUtilsBot(e):
+ "convert text to binary"
+ if e.fwd_from:
+  return
+ reply_to = await reply_id(e)
+ args = e.pattern_match.group(1)
+ if not args:
+  if e.is_reply:
+   reply = await e.get_reply_message()
+   args = reply.text
+  else:
+   await edit_delete(e, "No input found")
+
+ eris = await edit_or_reply(e, "converting text to binary")
+ res = await e.client.inline_query(
+  "textUtilsBot", args,
+ )
+
+ try:
+  await res[2].click(
+   e.chat_id,
+   hide_via=True,
+   reply_to=reply_to,
+  )
+  await eris.delete()
+ except Exception as fx:
+  await eris.edit(f"{fx}")
