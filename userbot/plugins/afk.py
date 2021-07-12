@@ -115,23 +115,23 @@ async def on_afk(event):  # sourcery no-metrics
         if AFK_.afk_type == "media":
             if AFK_.reason:
                 message_to_reply = (
-                    f"`Beamerboy is AFK/OFFLINE .\n\nAFK Since {endtime}\nReason:{AFK_.reason}`"
+                    f"`Beamerboy is AFK.\n\nAFK Since {endtime}\nReason: {AFK_.reason}`"
                 )
             else:
-                message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason:¯\_(ツ)_/¯`"
+                message_to_reply = f"`I am AFK.\n\nAFK Since {endtime}\nReason: ¯\_(ツ)_/¯`"
             if event.chat_id:
                 msg = await event.reply(message_to_reply, file=AFK_.media_afk.media)
         elif AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
                 message_to_reply = (
-                    f"**Beamerboy is AFK/OFFLINE .\n\nAFK Since {endtime}\nReason:**{AFK_.reason}"
+                    f"**Beamerboy is AFK.\n\nAFK Since {endtime}\nReason: **{AFK_.reason}"
                 )
             elif AFK_.reason:
                 message_to_reply = (
-                    f"`Beamerboy is AFK/OFFLINE .\n\nAFK Since {endtime}\nReason:{AFK_.reason}`"
+                    f"`Beamerboy is AFK.\n\nAFK Since {endtime}\nReason: {AFK_.reason}`"
                 )
             else:
-                message_to_reply = f"`Beamerboy is AFK/OFFLINE .\n\nAFK Since {endtime}\nReason: ¯\_(ツ)_/¯`"
+                message_to_reply = f"`Beamerboy is AFK.\n\nAFK Since {endtime}\nReason: ¯\_(ツ)_/¯`"
             if event.chat_id:
                 msg = await event.reply(message_to_reply)
         if event.chat_id in AFK_.last_afk_message:
